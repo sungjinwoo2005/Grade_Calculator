@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Grade Calculator (Midterm + Final)</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 400px; margin: 0 auto; padding: 20px; }
+        .container { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        select, button { padding: 8px; margin: 5px 0; width: 100%; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+        .result { margin-top: 20px; padding: 10px; background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>College Grade Calculator</h2>
+        <form method="post">
+            <label>Midterm Grade:</label>
+            <select name="midterm" required>
+                <option value="1.0">1.0 (Excellent)</option>
+                <option value="1.5">1.5 (Very Good)</option>
+                <option value="2.0">2.0 (Good)</option>
+                <option value="2.5">2.5 (Satisfactory)</option>
+                <option value="3.0">3.0 (Passing)</option>
+                <option value="5.0">5.0 (Failed)</option>
+            </select>
+
+            <label>Final Grade:</label>
+            <select name="final" required>
+                <option value="1.0">1.0 (Excellent)</option>
+                <option value="1.5">1.5 (Very Good)</option>
+                <option value="2.0">2.0 (Good)</option>
+                <option value="2.5">2.5 (Satisfactory)</option>
+                <option value="3.0">3.0 (Passing)</option>
+                <option value="5.0">5.0 (Failed)</option>
+            </select>
+
+            <button type="submit">Calculate Overall Grade</button>
+        </form>
+
+        <?php if (isset($overallGrade)): ?>
+            <div class="result">
+                <h3>Result:</h3>
+                <p>Overall Grade: <strong><?= $overallGrade ?></strong></p>
+                <p>Description: <strong><?= $description ?></strong></p>
+            </div>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
